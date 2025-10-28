@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Business, World News & Global Stock Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+.cnbc-header {
+    background-color: #001f5b;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.logo-img {
+    height: 30px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #1A2A44;
+}
+
+.watchlist, .sign-in, .create-account {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.bell {
+    margin-left: 5px;
+}
+
+.navbar {
+  background-color: #001f5b; 
+  padding: 10px 0;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a, .menu span {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-links a:hover {
+  background-color: #00308f;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.dropdown-content li a {
+  color: #004080;
+  font-weight: normal;
+  padding: 10px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+
+
+.market-nav {
+ 
+  padding-bottom: 5px; 
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin:15px 0;
+  margin-left: 15px;
+}
+
+.market-nav ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.market-nav li {
+  margin-right: 15px; 
+}
+
+.market-nav a {
+  text-decoration: none; 
+  color: #333; 
+  font-size: 14px; 
+  font-weight: bold; 
+  padding: 0 0 5px 0; 
+  display: block;
+  white-space: nowrap; 
+}
+
+.market-nav a:hover {
+  color: #000; 
+}
+
+.market-nav a.active {
+  border-bottom: 3px solid #0056b3; 
+  color: #0056b3;
+}
+
+.market-nav ul {
+    position: relative;
+}
+
+.market-nav ul::before {
+    content: '+';
+    color: #0056b3;
+    font-size: 18px;
+    font-weight: normal;
+    margin-right: 5px;
+    line-height: 1;
+}
+.stock-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stock-box {
+  width: 230px;
+  padding: 15px;
+  border-radius: 4px;
+  color: white;
+}
+
+.green {
+  background-color: #008657;
+}
+
+.gray {
+  background-color: #a0a0a0;
+}
+
+.stock-box h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.change {
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+.change span {
+  margin-left: 5px;
+}
+
+.unch {
+  font-size: 14px;
+  margin: 3px 0;
+  text-transform: uppercase;
+}
+
+.time {
+  font-size: 12px;
+  margin-top: 8px;
+  color: #e0e0e0;
+}
+
+.headline {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.quick-links-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.quick-links-label {
+    font-size: 14px;
+    color: #333;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+}
+
+.links-list {
+    display: flex;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px; 
+    position: relative;
+}
+
+.links-list::-webkit-scrollbar {
+    display: none;
+}
+.links-list {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.quick-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.label {
+  font-weight: bold;
+  
+  margin-right: 10px;
+  margin-left: 70px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  background-color: #f2f4f6;
+  color: #004a7c;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.links a:hover {
+  background-color: #e0e3e7;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.8fr;
+  gap: 20px;
+}
+
+.main-story {
+  position: relative;
+}
+
+.main-story img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 4px 4px;
+}
+
+.overlay h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.overlay p {
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin: 8px 0 0 0;
+  padding-top: 6px;
+}
+
+.side-stories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.story h3 {
+  font-size: 17px;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+.latest-news {
+  border-left: 3px solid #0074c2;
+  padding-left: 15px;
+}
+
+.latest-news h3 {
+  color: #003366;
+  border-bottom: 3px solid #0074c2;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.news-list {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.news-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.news-item span {
+  font-size: 12px;
+  color: gray;
+  font-weight: bold;
+}
+
+.news-item p {
+  margin: 5px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.news-item p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 6px;
+}
+.news-list::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 3px;
+}
+
+@media (max-width: 1000px) {
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  .side-stories {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .latest-news {
+    border-left: none;
+    border-top: 3px solid #0074c2;
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.finance-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+}
+
+.sidebar {
+  border-right: 2px solid #e0e0e0;
+  padding-right: 20px;
+}
+
+.section-title {
+  border-top: 3px solid #003366;
+  padding-top: 8px;
+  color: #003366;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+}
+
+.sub-title {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.quote {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.up {
+  color: #008000;
+  font-weight: bold;
+}
+
+.market-tabs {
+  margin: 10px 0;
+}
+
+.market-tabs a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.market-tabs a.active {
+  border-bottom: 2px solid #003366;
+}
+
+.mover {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.mover strong {
+  color: #003366;
+}
+
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.news-item img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.news-item h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.news-item p {
+  font-size: 13px;
+  color: gray;
+}
+
+.live {
+  background-color: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.pro {
+  background-color: #008657;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.ad-panel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ad-img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+@media (max-width: 1000px) {
+  .finance-container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+}
+
+.left {
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+}
+
+.index {
+  font-weight: bold;
+  color: #001f3f;
+  border-bottom: 2px solid #001f3f;
+  padding-bottom: 6px;
+}
+
+.title {
+  font-size: 16px;
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #001f3f;
+  color: #001f3f;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.tabs a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #001f3f;
+}
+
+.tabs .active {
+  border-bottom: 2px solid #001f3f;
+}
+
+.section h4 {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.item strong {
+  color: #001f3f;
+}
+
+.item p {
+  margin: 2px 0 0;
+  color: #555;
+  font-size: 12px;
+}
+
+.up { color: #008000; font-weight: bold; }
+.down { color: #d00000; font-weight: bold; }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  line-height: 1.3;
+}
+
+.card h3 a {
+  text-decoration: underline;
+  color: #001f3f;
+}
+
+.card p {
+  font-size: 13px;
+  color: #0077b6;
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.right img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.markets {
+  border-top: 4px solid #ffcc00;
+}
+
+.main-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 20px 0;
+}
+
+.box {
+  border: 1px dotted #ccc;
+  background: #f9fbfc;
+  padding: 20px;
+  border-bottom: 6px solid #002b5c;
+  border-top: 6px solid #002b5c;
+}
+
+.sub-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #002b5c;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.tabs a {
+  text-decoration: none;
+  font-weight: bold;
+  color: gray;
+}
+
+.tabs a.active {
+  color: #004aad;
+  border-bottom: 2px solid #004aad;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.side h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.name {
+  font-size: 14px;
+  color: #000;
+}
+
+.name strong {
+  color: #002b5c;
+  margin-right: 6px;
+}
+
+.percent {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.up { color: #007f5f; }
+.down { color: #d00000; }
+
+.bar {
+  height: 10px;
+  border-radius: 3px;
+}
+
+.bar.up { background: #007f5f; }
+.bar.down { background: #d00000; }
+
+@media (max-width: 900px) {
+  .lists {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stock-news-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #002b5c;
+  border-top: 6px solid #002b5c;
+  padding-top: 10px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.stock-table thead th {
+  text-align: left;
+  color: gray;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.stock-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stock-table td {
+  padding: 8px 0;
+}
+
+.stock-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.pos {
+  color: #007f5f;
+  font-weight: bold;
+}
+
+.neg {
+  color: #d00000;
+  font-weight: bold;
+}
+
+.market-updates .update-card {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.market-updates h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.writer {
+  color: #004aad;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .stock-news-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.volume-news-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #002b5c;
+  border-top: 6px solid #002b5c;
+  padding-top: 10px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.volume-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.volume-table thead th {
+  text-align: left;
+  color: gray;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.volume-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.volume-table td {
+  padding: 8px 0;
+}
+
+.volume-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.pos {
+  color: #007f5f;
+  font-weight: bold;
+}
+
+.neg {
+  color: #d00000;
+  font-weight: bold;
+}
+
+.news-column .news-block {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.news-column h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.writer {
+  color: #004aad;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  background: #009900;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 900px) {
+  .volume-news-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.livestream-section {
+  position: relative;
+  background-image: url('https://i.ibb.co/HTqDSJ0h/CNBC.jpg'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.stream-header {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.logo {
+  width: 120px;
+  vertical-align: middle;
+}
+
+.plus-sign {
+  font-size: 48px;
+  color: #00bcd4;
+  font-weight: bold;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.stream-header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.stream-header p {
+  color: #dce2f0;
+  font-size: 17px;
+  max-width: 800px;
+  margin: 10px auto 40px;
+  line-height: 1.6;
+}
+
+.grid-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  width: 85%;
+  margin: 0 auto 40px;
+}
+
+.grid-container img {
+  width: 100%;
+  border-radius: 6px;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.grid-container img:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.subscription-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #2a3457;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  z-index: 2;
+  position: relative;
+}
+
+.mini-logo {
+  width: 60px;
+  vertical-align: middle;
+}
+
+.mini-plus {
+  font-size: 28px;
+  color: #ecf1f2;
+  font-weight: bold;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.subscription-box h2 {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.subscription-box ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 250px;
+  margin: 0 auto 20px;
+}
+
+.subscription-box li {
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.price {
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.price span {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.subscribe-btn {
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.small-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.link {
+  color: #00bcd4;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.cable-box {
+  
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.cable-box p {
+  font-size: 15px;
+}
+
+.provider-link {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.provider-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .stream-header h1 {
+    font-size: 26px;
+  }
+  .grid-container {
+    width: 95%;
+  }
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #002b5c;
+  border-bottom: 3px solid #002b5c;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.special-reports .reports-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.report-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.report-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.report-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+}
+
+.report-content h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.report-content .author {
+  color: #ffcc00;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.trending {
+  margin-top: 40px;
+}
+
+.trending-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.trend-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.trend-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d3dce6;
+  display: block;
+}
+
+.trend-item p {
+  font-size: 0.95rem;
+  color: #001f3f;
+  margin-top: 5px;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .reports-container {
+    grid-template-columns: 1fr;
+  }
+
+  .trending-list {
+    flex-direction: column;
+  }
+}
+
+.videos-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0046ad;
+  margin-bottom: 20px;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.video-card {
+  cursor: pointer;
+}
+
+.video-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffb700;
+  color: white;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.video-card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #0046ad;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.large .video-thumb img {
+  height: 250px;
+}
+
+.small .video-thumb img {
+  height: 180px;
+}
+
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #002b5c;
+  margin-bottom: 20px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.news-card {
+  cursor: pointer;
+}
+
+.news-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.news-thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffb700;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+}
+
+.news-card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #0046ad;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.large .news-thumb img {
+  height: 250px;
+}
+
+.small .news-thumb img {
+  height: 180px;
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pro-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #003366;
+  margin-bottom: 25px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.news-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.news-content {
+  margin-top: 10px;
+}
+
+.pro-tag {
+  background: #00b050;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 3px 6px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.news-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+  margin-top: 5px;
+}
+
+.author {
+  color: #0047ab;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.time {
+  color: #666;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.big img {
+  height: 280px;
+}
+
+.small img {
+  height: 180px;
+}
+
+.news-card:hover h3 {
+  text-decoration: underline;
+  color: #0047ab;
+}
+
+.news-card img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.explains-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #003366;
+  margin-bottom: 25px;
+}
+
+.explains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.explains-card {
+  cursor: pointer;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.play-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f4a000;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 2px;
+  padding: 5px 7px;
+}
+
+.explains-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+  margin-top: 8px;
+}
+
+.author {
+  color: #0047ab;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.img-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+.explains-card:hover h3 {
+  text-decoration: underline;
+  color: #0047ab;
+}
+
+.large img {
+  height: 300px;
+}
+
+.small img {
+  height: 180px;
+}
+
+@media (max-width: 768px) {
+  .explains-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.cnbc-footer {
+  background-color: #03204c;
+  color: white;
+  padding: 40px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 120px;
+}
+
+.footer-socials a {
+  color: white;
+  margin-left: 20px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #f2a900;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #30517e;
+  margin: 20px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 10px;
+}
+
+.footer-content ul li a {
+  color: #d9e3f0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-content ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  color: #cdd9ec;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.footer-box button {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.footer-box button:hover {
+  background: #f2a900;
+  border-color: #f2a900;
+  color: #03204c;
+}
+
+.footer-box small {
+  display: block;
+  color: #89a2d6;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .cnbc-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.footer-bottom {
+  background-color: #03204c;
+  color: #cdd9ec;
+  text-align: left;
+  padding: 30px 80px 50px 80px;
+  font-size: 13px;
+  border-top: 1px solid #2f4a77;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f2a900;
+}
+
+.footer-bottom p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.footer-bold {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.refinitiv-logo {
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="cnbc-header">
+        <div class="logo">
+            <img src="https://static-redesign.cnbcfm.com/dist/7821ea3cb72f88388591.svg" alt="CNBC Logo" class="logo-img">
+        </div>
+        <div class="right-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search quotes, news & videos">
+            </div>
+            <a href="#" class="watchlist">Watchlist <span class="bell" ><img src="https://i.ibb.co/qFpLR5SQ/Screenshot-2025-10-27-083854.png" style="width: 15px; height: 15px;">  </span></a>
+            <a href="#" class="sign-in">Sign In</a>
+            <a href="#" class="create-account">Create Free Account</a>
+        </div>
+    </header>
+
+
+     <nav class="navbar">
+    <ul class="nav-links">
+      <li class="menu"><span>☰</span></li>
+      <li class="dropdown">
+        <a href="#">MARKETS</a>
+        <ul class="dropdown-content">
+          <li><a href="#">U.S. MARKETS</a></li>
+          <li><a href="#">EUROPE MARKETS
+</a></li>
+          <li><a href="#">CHINA MARKETS
+</a></li>
+          <li><a href="#">ASIA MARKETS</a></li>
+                    <li><a href="#">WORLD MARKETS
+</a></li>
+                              <li><a href="#">CURRENCIES
+</a></li>
+
+
+
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">BUSINESS</a>
+        <ul class="dropdown-content">
+          <li><a href="#">ECONOMY
+</a></li>
+          <li><a href="#">AFTER HOURS</a></li>
+          <li><a href="#">FINANCE
+</a></li>
+          <li><a href="#">HEALTH & SCIENCE
+</a></li>
+          <li><a href="#">MEDIA
+</a></li>
+          <li><a href="#">REAL ESTATE
+</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">INVESTING</a>
+         <ul class="dropdown-content">
+          <li><a href="#">PERSONAL FINANCE
+</a></li>
+          <li><a href="#">FINTECH
+</a></li>
+          <li><a href="#">FINANCIAL ADVISORS
+</a></li>
+           <li><a href="#">OPTIONS ACTION
+</a></li>
+          <li><a href="#">ETF STREET</a></li>
+          <li><a href="#">BUFFETT ARCHIVE</a></li>
+        </ul>
+      </li>
+
+            <li class="dropdown">
+
+      <a href="#">TECH</a>
+        <ul class="dropdown-content">
+          <li><a href="#">CYBERSECURITY
+</a></li>
+          <li><a href="#">AI</a></li>
+          <li><a href="#">ENTERPRISE
+</a></li>
+           <li><a href="#">INTERNET</a></li>
+          <li><a href="#">MEDIA</a></li>
+          <li><a href="#">MOBILE</a></li>
+        </ul>
+      </li>
+                   <li class="dropdown">
+
+      <a href="#">POLITICS</a>
+      <ul class="dropdown-content">
+          <li><a href="#">WHITE HOUSE
+</a></li>
+          <li><a href="#">AFTER HOURS</a></li>
+          <li><a href="#">POLICY</a></li>
+                    <li><a href="#">DEFENSE</a></li>
+          <li><a href="#">CONGRESS</a></li>
+          <li><a href="#">EXPANDING OPPORTUNITIES</a></li>
+        </ul>
+      </li>
+                          <li class="dropdown">
+
+      <a href="#">VIDEO</a>
+      <ul class="dropdown-content">
+          <li><a href="#">LATEST VIDEO</a></li>
+          <li><a href="#">FULL EPISODES
+</a></li>
+          <li><a href="#">LIVESTREAM</a></li>
+           <li><a href="#">TOP VIDEO
+</a></li>
+          <li><a href="#">LIVE AUDIO
+</a></li>
+          <li><a href="#">EUROPE TV
+</a></li>
+        </ul>
+      </li>
+                          <li class="dropdown">
+
+      <a href="#">INVESTING CLUB</a>
+       <ul class="dropdown-content">
+          <li><a href="#">ANALYSIS</a></li>
+          <li><a href="#">TRUST PORTFOLIO</a></li>
+          <li><a href="#">TRADE ALERTS
+</a></li>
+          <li><a href="#">MEETING VIDEOS
+</a></li>
+          <li><a href="#">HOMESTRETCH</a></li>
+          <li><a href="#">JIM'S COLUMNS</a></li>
+        </ul>
+      </li>
+                                <li class="dropdown">
+
+      <a href="#">PRO</a>
+      <ul class="dropdown-content">
+          <li><a href="#">PRO NEWS</a></li>
+          <li><a href="#">JOSH BROWN</a></li>
+          <li><a href="#">MIKE SANTOLI
+</a></li>
+          <li><a href="#">ANALYST CALLS
+</a></li>
+          <li><a href="#">MY PORTFOLIO
+</a></li>
+          <li><a href="#">LIVESTREAM</a></li>
+        </ul>
+      </li>
+                                      <li class="dropdown">
+
+      <a href="#">LIVESTREAM</a>
+      <ul class="dropdown-content">
+          <li><a href="#">PRE-MARKETS</a></li>
+          <li><a href="#">AFTER HOURS</a></li>
+          <li><a href="#">STOCKS</a></li>
+        </ul>
+        </li>
+
+             <li> <a href="#">MAKE IT</a></li>
+                          <li> <a href="#">SELECT</a></li>
+              <li> <a href="#">USA   INTL</a></li>
+
+    </ul>
+    
+  </nav>
+
+
+<nav class="market-nav">
+  <ul>
+    <li><a href="#" class="active">ASIA</a></li>
+    <li><a href="#">US</a></li>
+    <li><a href="#">EUR</a></li>
+    <li><a href="#">PRE-MKT</a></li>
+    <li><a href="#">BONDS</a></li>
+    <li><a href="#">GOLD</a></li>
+    <li><a href="#">FX</a></li>
+    <li><a href="#">CRYPTO</a></li>
+    <li><a href="#">OIL</a></li>
+  </ul>
+</nav>
+
+<div class="stock-container">
+    <div class="stock-box green">
+      <h3>ASX 200*</h3>
+      <p class="value">9,058.10</p>
+      <p class="change">▲ +39.10 <span>+0.43%</span></p>
+      <p class="time">LAST | 1:15:44 PM AET</p>
+    </div>
+
+    <div class="stock-box green">
+      <h3>NIKKEI*</h3>
+      <p class="value">50,337.36</p>
+      <p class="change">▲ +1,037.71 <span>+2.10%</span></p>
+      <p class="time">LAST | 11:35:03 AM JST</p>
+    </div>
+
+    <div class="stock-box gray">
+      <h3>NIFTY 50*</h3>
+      <p class="value">25,795.15</p>
+      <p class="unch">UNCH</p>
+      <p class="time">LAST | 5:40:01 AM IST</p>
+    </div>
+
+    <div class="stock-box green">
+      <h3>HSI*</h3>
+      <p class="value">26,411.66</p>
+      <p class="change">▲ +251.51 <span>+0.96%</span></p>
+      <p class="time">LAST | 11:21:00 AM CTT</p>
+    </div>
+
+    <div class="stock-box green">
+      <h3>SHANGHAI*</h3>
+      <p class="value">3,988.42</p>
+      <p class="change">▲ +38.108 <span>+0.96%</span></p>
+      <p class="time">LAST | 11:21:00 AM CTT</p>
+    </div>
+  </div>
+
+  <h2 class="headline">
+    Japan’s Nikkei 225 crosses 50,000 for the first time, ahead of Takaichi-Trump meeting
+  </h2>
+
+
+  <a href="https://ibb.co/MxX61PJR"><img src="https://i.ibb.co/5g7FjsJ5/Screenshot-2025-10-27-092343.png" alt="Screenshot-2025-10-27-092343" border="0" style="width: 1100px; margin-left: 300px;"></a>
+
+
+   <div class="quick-links">
+    <span class="label">Quick Links</span>
+
+    <div class="links">
+      <a href="#">Asia market moves</a>
+      <a href="#">U.S. futures</a>
+      <a href="#">Trump-Xi meeting</a>
+      <a href="#">‘Superintelligence’ ban</a>
+      <a href="#">‘Vibe coding’ hackathon</a>
+      <a href="#">U.S.-Canada trade</a>
+      <a href="#">Hedge fund</a>
+    </div>
+  </div>
+
+ <div class="news-container">
+
+    <div class="main-story">
+      <img src="https://image.cnbcfm.com/api/v1/image/108077447-1734523737825-gettyimages-2130007567-vcg111488656211.jpeg?v=1761523115&w=830&h=554&ffmt=webp&vtcrop=y" alt="China Factory">
+      <div class="overlay">
+        <h2>China’s industrial profits surge 21.6% in September, biggest jump in nearly two years</h2>
+        <p>China strikes conciliatory tone ahead of expected Trump-Xi meeting</p>
+        <p>U.S. and China talks sketch out rare earths, tariff pause for Trump and Xi to consider</p>
+      </div>
+    </div>
+
+    <div class="side-stories">
+      <div class="story">
+        <img src="https://image.cnbcfm.com/api/v1/image/106588194-1592893336296gettyimages-1212971297.jpeg?v=1761528172&w=600&h=338&ffmt=webp&vtcrop=y" alt="Trump and Xi">
+        <h3>Trump to meet China’s Xi for the first time in second term as trade deal remains elusive</h3>
+      </div>
+
+      <div class="story">
+        <img src="https://image.cnbcfm.com/api/v1/image/108054194-17302078842024-06-17t021456z_819532323_rc27b8aahscy_rtrmadp_0_mexico-hsbc.jpeg?v=1745939516&w=600&h=338&ffmt=webp&vtcrop=y" alt="HSBC">
+        <h3>HSBC to recognize $1.1 billion provision in third quarter after court ruling in Madoff case</h3>
+      </div>
+    </div>
+
+    <div class="latest-news">
+      <h3>LATEST NEWS</h3>
+      <div class="news-list">
+        <div class="news-item">
+          <span>3 HOURS AGO</span>
+          <p>China’s industrial profits surge 21.6% in September, biggest jump in nearly two years</p>
+        </div>
+
+        <div class="news-item">
+          <span>3 HOURS AGO</span>
+          <p>Cooler-than-expected U.S. consumer inflation adds to market cheer</p>
+        </div>
+
+        <div class="news-item">
+          <span>5 HOURS AGO</span>
+          <p>Japan’s Nikkei 225 crosses 50,000 for the first time, ahead of Takaichi-Trump meeting</p>
+        </div>
+
+        <div class="news-item">
+          <span>5 HOURS AGO</span>
+          <p>HSBC to recognize $1.1 billion provision after court ruling in Madoff case</p>
+        </div>
+
+        <div class="news-item">
+          <span>7 HOURS AGO</span>
+          <p>Cramer: Invest in stocks and avoid 1990s-like speculation that seems so tempting</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<div class="finance-container">
+
+  <aside class="sidebar">
+    <h3 class="section-title">QUOTE FINDER</h3>
+    <input type="text" placeholder="SEARCH" class="search-box">
+
+    <h4 class="sub-title">POPULAR QUOTES</h4>
+    <div class="quote">
+      <span>US10Y</span>
+      <span>4.03</span>
+      <span class="up">+0.03 (0.78%)</span>
+    </div>
+    <div class="quote">
+      <span>BTC.CM=</span>
+      <span>115046.4</span>
+      <span class="up">+1443.61 (1.27%)</span>
+    </div>
+    <div class="quote">
+      <span>NVDA</span>
+      <span>186.26</span>
+      <span class="up">+4.1 (2.25%)</span>
+    </div>
+
+    <h3 class="section-title">MARKET MOVERS</h3>
+    <div class="market-tabs">
+      <a href="#" class="active">US</a>
+      <a href="#">EUR</a>
+      <a href="#">ASIA</a>
+    </div>
+
+    <div class="mover">
+      <div>
+        <strong>F</strong>
+        <p>Ford Motor Co</p>
+      </div>
+      <div>
+        <span>13.84</span>
+        <span class="up">+1.5 (+12.16%)</span>
+      </div>
+    </div>
+
+    <div class="mover">
+      <div>
+        <strong>COIN</strong>
+        <p>Coinbase Global Inc</p>
+      </div>
+      <div>
+        <span>354.46</span>
+        <span class="up">+31.7 (+9.82%)</span>
+      </div>
+    </div>
+
+    <div class="mover">
+      <div>
+        <strong>ALB</strong>
+        <p>Albemarle Corp</p>
+      </div>
+      <div>
+        <span>105.64</span>
+        <span class="up">+8.28 (+8.5%)</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="news-feed">
+
+    <div class="news-item">
+      <img src="https://image.cnbcfm.com/api/v1/image/108216965-1761522861714-gettyimages-2243132772-ah707861_sb2emqk9.jpeg?v=1761522875&w=240&h=180&ffmt=webp&vtcrop=y" alt="Trump Xi">
+      <div>
+        <h3>Japan’s Nikkei 225 crosses 50,000 for the first time, ahead of Takaichi-Trump meeting</h3>
+        <p><span>AN HOUR AGO</span> • Lee Ying Shan</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://image.cnbcfm.com/api/v1/image/108216609-1761316783972-Traders-Photo-KK-20251023-PRESS-015.jpg?v=1761316871&w=240&h=180&ffmt=webp&vtcrop=y" alt="Stock Futures">
+      <div>
+        <h3><span class="live">LIVE</span> Stock futures climb ahead of Big Tech earnings, widely expected Fed rate cut</h3>
+        <p><span>4 HOURS AGO</span> • Liz Napolitano</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://image.cnbcfm.com/api/v1/image/108201234-17582866362025-09-19t125251z_584366185_rc20vga2jjrk_rtrmadp_0_apple-retail.jpeg?v=1758286683&w=240&h=180&ffmt=webp&vtcrop=y" alt="Earnings">
+      <div>
+        <h3><span class="pro">PRO</span> Earnings playbook: Five ‘Magnificent Seven’ members are set to report in busy week</h3>
+        <p>Fred Imbert</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://image.cnbcfm.com/api/v1/image/108196736-1757505302907-gettyimages-2234008239-AFP_73YG3ZQ.jpeg?v=1757505407&w=240&h=180&ffmt=webp&vtcrop=y" alt="Inflation">
+      <div>
+        <h3>Cooler-than-expected U.S. consumer inflation adds to market cheer</h3>
+        <p><span>2 HOURS AGO</span> • Yeo Boon Ping</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://image.cnbcfm.com/api/v1/image/108091223-1737638877407-gettyimages-2194781713-AFP_36VM727.jpeg?v=1738771625&w=240&h=180&ffmt=webp&vtcrop=y" alt="Argentina">
+      <div>
+        <h3>Argentina’s midterm election hands landslide win to Milei’s libertarian overhaul</h3>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="ad-panel">
+    <img src="https://i.ibb.co/pBJm25v4/Screenshot-2025-10-27-103224.png" alt="Ad" class="ad-img">
+  </aside>
+
+</div>
+<div class="main-container">
+
+  <div class="container">
+
+  <div class="left">
+    <h3 class="index">.N225 <span>50336.93</span> <span class="up">+1037.28 (2.1%)</span></h3>
+
+    <h2 class="title">MARKET MOVERS</h2>
+    <div class="tabs">
+      <a href="#" class="active">US</a>
+      <a href="#">EUR</a>
+      <a href="#">ASIA</a>
+    </div>
+
+    <div class="section">
+      <h4>TOP</h4>
+      <div class="item">
+        <div><strong>F</strong> <p>Ford Motor Co</p></div>
+        <div><span>13.84</span> <span class="up">+1.5 (+12.16%)</span></div>
+      </div>
+
+      <div class="item">
+        <div><strong>COIN</strong> <p>Coinbase Global Inc</p></div>
+        <div><span>354.46</span> <span class="up">+31.7 (+9.82%)</span></div>
+      </div>
+
+      <div class="item">
+        <div><strong>ALB</strong> <p>Albemarle Corp</p></div>
+        <div><span>105.64</span> <span class="up">+8.28 (+8.5%)</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>BOTTOM</h4>
+      <div class="item">
+        <div><strong>DECK</strong> <p>Deckers Outdoor Corp</p></div>
+        <div><span>86.94</span> <span class="down">-15.6 (-15.21%)</span></div>
+      </div>
+
+      <div class="item">
+        <div><strong>MHK</strong> <p>Mohawk Industries Inc</p></div>
+        <div><span>119.9</span> <span class="down">-9 (-6.98%)</span></div>
+      </div>
+
+      <div class="item">
+        <div><strong>NEM</strong> <p>Newmont Corporation</p></div>
+        <div><span>83.37</span> <span class="down">-5.54 (-6.23%)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+
+    <div class="card">
+      <div class="text">
+        <h3>Europe’s defense giants announce space merger to rival Elon Musk’s Starlink</h3>
+        <p>Chloe Taylor</p>
+      </div>
+      <img src="https://image.cnbcfm.com/api/v1/image/108215893-1761221679282-gettyimages-1774859343-AFP_34348GQ.jpeg?v=1761221685&w=240&h=180&ffmt=webp&vtcrop=y" alt="">
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h3>How a cheese ban drove a new wedge between the UK and EU</h3>
+        <p>Holly Ellyatt</p>
+      </div>
+      <img src="https://image.cnbcfm.com/api/v1/image/107083595-1656657353246-gettyimages-1371876625-1009_29_374950.jpeg?v=1656657435&w=240&h=180&ffmt=webp&vtcrop=y" alt="">
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h3>Trump slaps 10% extra tariff on Canada over Reagan trade ad</h3>
+        <p>Dan Mangan</p>
+      </div>
+      <img src="https://image.cnbcfm.com/api/v1/image/108208886-17598527592025-10-07t155818z_1459366363_rc237hannhz8_rtrmadp_0_usa-trump-canada.jpeg?v=1759852798&w=240&h=180&ffmt=webp&vtcrop=y" alt="">
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h3>Suspects in Louvre jewel heist case arrested near Paris, prosecutor says</h3>
+      </div>
+      <img src="https://image.cnbcfm.com/api/v1/image/108213894-17608773602025-10-19t114109z_1575708420_rc2zehaq4tl9_rtrmadp_0_france-crime-louvre.jpeg?v=1760877407&w=240&h=180&ffmt=webp&vtcrop=y" alt="">
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h3><a href="#">Top Wall Street analysts pound the table for solid returns in these 3 stocks</a></h3>
+      </div>
+      <img src="https://image.cnbcfm.com/api/v1/image/108181937-1754419776090-gettyimages-1532811951-app_logos.jpeg?v=1754419842&w=240&h=180&ffmt=webp&vtcrop=y" alt="">
+    </div>
+
+  </div>
+
+ 
+
+</div>
+
+<section class="markets">
+  <h1 class="main-title">MARKETS</h1>
+
+  <div class="box">
+    <h2 class="sub-title">MARKET MOVERS</h2>
+    <div class="tabs">
+      <a href="#" class="active">S&amp;P</a>
+      <a href="#">NASDAQ</a>
+      <a href="#">DOW</a>
+      <a href="#">EUR</a>
+      <a href="#">ASIA</a>
+    </div>
+
+    <div class="lists">
+      <div class="side">
+        <h3>TOP</h3>
+        <div class="row">
+          <div class="name"><strong>F</strong> Ford Motor Co</div>
+          <div class="percent up">12.156%</div>
+          <div class="bar up" style="width: 85%; height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>COIN</strong> Coinbase Global</div>
+          <div class="percent up">9.822%</div>
+          <div class="bar up" style="width: 70%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>ALB</strong> Albemarle Corp</div>
+          <div class="percent up">8.505%</div>
+          <div class="bar up" style="width: 60%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>IBM</strong> International Bus.</div>
+          <div class="percent up">7.881%</div>
+          <div class="bar up" style="width: 50%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>AMD</strong> Advanced Micro</div>
+          <div class="percent up">7.63%</div>
+          <div class="bar up" style="width: 45%;height: 15px;"></div>
+        </div>
+      </div>
+
+      <div class="side">
+        <h3>BOTTOM</h3>
+        <div class="row">
+          <div class="name"><strong>DECK</strong> Deckers Outdoor</div>
+          <div class="percent down">15.214%</div>
+          <div class="bar down" style="width: 85%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>MHK</strong> Mohawk Industries</div>
+          <div class="percent down">6.982%</div>
+          <div class="bar down" style="width: 50%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>NEM</strong> Newmont Corp</div>
+          <div class="percent down">6.231%</div>
+          <div class="bar down" style="width: 45%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>ITW</strong> Illinois Tool Works</div>
+          <div class="percent down">4.541%</div>
+          <div class="bar down" style="width: 35%;height: 15px;"></div>
+        </div>
+        <div class="row">
+          <div class="name"><strong>PKG</strong> Packaging Corp</div>
+          <div class="percent down">3.953%</div>
+          <div class="bar down" style="width: 30%;height: 15px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stock-news-container">
+
+  <div class="active-stocks">
+    <h2>Most Active</h2>
+
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>CHG</th>
+          <th>%CHG</th>
+          <th>VOL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>BYND</strong></td>
+          <td>2.185</td>
+          <td class="neg">-0.655</td>
+          <td class="neg">-23.063 ▼</td>
+          <td>803,375,330</td>
+        </tr>
+        <tr>
+          <td><strong>F</strong></td>
+          <td>13.84</td>
+          <td class="pos">+1.5</td>
+          <td class="pos">+12.156 ▲</td>
+          <td>298,366,862</td>
+        </tr>
+        <tr>
+          <td><strong>BBAI</strong></td>
+          <td>7.05</td>
+          <td class="pos">+0.27</td>
+          <td class="pos">+3.982 ▲</td>
+          <td>293,442,704</td>
+        </tr>
+        <tr>
+          <td><strong>INTC</strong></td>
+          <td>38.28</td>
+          <td class="pos">+0.12</td>
+          <td class="pos">+0.315 ▲</td>
+          <td>246,379,971</td>
+        </tr>
+        <tr>
+          <td><strong>OPEN</strong></td>
+          <td>7.97</td>
+          <td class="pos">+0.94</td>
+          <td class="pos">+13.371 ▲</td>
+          <td>207,911,586</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="market-updates">
+    <h2>Latest Market News</h2>
+
+    <div class="update-card">
+      <h3>Elite bull market takes control again with the S&amp;P 500 touching 6,800 for first time ever</h3>
+      <p class="writer">Michael Santoli</p>
+    </div>
+
+    <div class="update-card">
+      <h3>Warren Buffett’s Berkshire is lagging the S&amp;P 500 by the largest gap so far this year</h3>
+      <p class="writer">Alex Crippen</p>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="volume-news-section">
+
+  <div class="volume-table-section">
+    <h2>Unusual Volume</h2>
+
+    <table class="volume-table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>CHG</th>
+          <th>%CHG</th>
+          <th>X10 DAY VOL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SLNZ</strong></td>
+          <td>46.77</td>
+          <td class="pos">+0.005</td>
+          <td class="pos">+0.011 ▲</td>
+          <td>131.456</td>
+        </tr>
+        <tr>
+          <td><strong>VIOT</strong></td>
+          <td>3.38</td>
+          <td class="pos">+0.58</td>
+          <td class="pos">+20.714 ▲</td>
+          <td>31.732</td>
+        </tr>
+        <tr>
+          <td><strong>TV</strong></td>
+          <td>2.39</td>
+          <td class="neg">-0.02</td>
+          <td class="neg">-0.83 ▼</td>
+          <td>30.006</td>
+        </tr>
+        <tr>
+          <td><strong>DIAL</strong></td>
+          <td>18.545</td>
+          <td class="pos">+0.005</td>
+          <td class="pos">+0.027 ▲</td>
+          <td>25.406</td>
+        </tr>
+        <tr>
+          <td><strong>INBX</strong></td>
+          <td>57.29</td>
+          <td class="pos">+28.93</td>
+          <td class="pos">+102.01 ▲</td>
+          <td>18.846</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="news-column">
+    <h2>Latest Market News</h2>
+
+    <div class="news-block">
+      <div class="tag">PRO</div>
+      <h3 >Wall Street barrels toward final week of October against backdrop of Big Tech earnings, Fed meeting</h3>
+      <p class="writer">Sarah Min</p>
+    </div>
+
+    <div class="news-block">
+      <h3>Will the bull market make it to a fourth year? — Learn the best 2026 strategies at Pro Live</h3>
+      <p class="writer">John Melloy</p>
+    </div>
+  </div>
+
+</section>
+
+ <section class="livestream-section">
+    <div class="overlay"></div>
+
+    <div class="stream-header">
+      
+      <h1 style="color: rgb(255, 254, 253);">Watch the CNBC Livestream</h1>
+      <p>Watch every minute of market coverage and stay informed on all breaking news, opinions, and analysis 
+         from pre-market buzz to the closing bell, and beyond. Miss a moment? Catch up with full episodes on-demand.</p>
+    </div>
+
+    
+
+    <div class="subscription-box">
+      <img src="https://i.ibb.co/7xqx5LGR/Screenshot-2025-10-27-130954.png" style="width: 200px;" class="mini-logo" alt="CNBC+">
+      <h2 style="color: rgb(245, 244, 242);">Join CNBC+ now, and start Streaming Today</h2>
+
+      <ul>
+        <li style="color: rgb(255, 254, 253);">✔ Global Livestream</li>
+        <li style="color: rgb(255, 254, 253);">✔ Market Data Livestream</li>
+        <li style="color: rgb(255, 254, 253);">✔ On-Demand Library</li>
+        <li style="color: rgb(255, 254, 253);">✔ Access Anytime, On the Go</li>
+      </ul>
+
+      <p class="price">$149.99/year<br><span>or</span><br>$14.99/month</p>
+      <button class="subscribe-btn">SUBSCRIBE TO CNBC+</button>
+      <p class="small-text">Currently on cnbc.com and iOS & Android apps.</p>
+      <a href="#" class="link">Learn more or Sign in</a>
+    </div>
+
+    <div class="cable-box">
+      <p>Prefer to watch CNBC via cable?<br>
+      <a href="#" class="provider-link">Choose your provider →</a></p>
+    </div>
+
+  </section>
+<section class="special-reports">
+    <h2 class="section-title" style="margin-top: 40px;">SPECIAL REPORTS</h2>
+    <div class="reports-container">
+
+      <div class="report-card">
+        <img src="https://images.pexels.com/photos/3182835/pexels-photo-3182835.jpeg" alt="report1">
+        <div class="report-content">
+          <h3>Inherited IRAs have a key tax change for 2025. What to know to avoid a penalty of up to 25%</h3>
+          <p class="author">Kate Dore, CFP®, EA</p>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <img src="https://images.pexels.com/photos/6765371/pexels-photo-6765371.jpeg" alt="report2">
+        <div class="report-content">
+          <h3>With market concentration risk at peak, ‘it’s cash, precious metals, and then crypto’ as new normal</h3>
+          <p class="author">Krysta Escobar</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="trending">
+    <h2 class="section-title">TRENDING NOW</h2>
+    <div class="trending-list">
+      <div class="trend-item">
+        <span class="trend-number">1</span>
+        <p>Rare earth stocks tumble as U.S. expects China to delay export controls</p>
+      </div>
+      <div class="trend-item">
+        <span class="trend-number">2</span>
+        <p>Psychologist: People in the happiest relationships have 5 things in common with their partner</p>
+      </div>
+      <div class="trend-item">
+        <span class="trend-number">3</span>
+        <p>Trump says he underwent an MRI examination</p>
+      </div>
+      <div class="trend-item">
+        <span class="trend-number">4</span>
+        <p>Dow futures rally 250 points on potential China trade truce</p>
+      </div>
+      <div class="trend-item">
+        <span class="trend-number">5</span>
+        <p>Argentina’s midterm election hands landslide win to Milei’s libertarian overhaul</p>
+      </div>
+    </div>
+  </section>
+
+ <section class="top-videos">
+    <h2 class="videos-title">TOP VIDEOS</h2>
+
+    <div class="videos-grid">
+
+      <div class="video-card large">
+        <div class="video-thumb">
+          <img src="https://images.pexels.com/photos/4427619/pexels-photo-4427619.jpeg" alt="Video 1">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>U.S. sanctions on Russia are an indication we need to ‘step up’ pressure on Putin to end Ukraine war, U.S....</h3>
+      </div>
+
+      <div class="video-card large">
+        <div class="video-thumb">
+          <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Video 2">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>From cleanrooms to chip power: How GlobalFoundries is steering the chip race</h3>
+        <p class="author">Christine Tan</p>
+      </div>
+
+      <div class="video-card small">
+        <div class="video-thumb">
+          <img src="https://image.cnbcfm.com/api/v1/image/108215791-17612068741761206871-42229357989-1080pnbcnews.jpg?v=1761206873&w=600&h=300&ffmt=webp&vtcrop=y" alt="Video 3">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>‘AI is a supercycle,’ says Nokia CEO</h3>
+      </div>
+
+      <div class="video-card small">
+        <div class="video-thumb">
+          <img src="https://image.cnbcfm.com/api/v1/image/108215767-17611995101761199507-42228120024-1080pnbcnews.jpg?v=1761199509&w=600&h=300&ffmt=webp&vtcrop=y" alt="Video 4">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>U.S. sanctions on Russia ‘a good signal of strength’: EU’s Kallas</h3>
+      </div>
+
+      <div class="video-card small">
+        <div class="video-thumb">
+          <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Video 5">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Levi’s CEO bets on Asia and women’s fashion to grow the brand to $10 billion</h3>
+        <p class="author">Christine Tan</p>
+      </div>
+
+    </div>
+  </section>
+ <section class="uk-news">
+    <h2 class="section-title">UNITED KINGDOM</h2>
+
+    <div class="news-grid">
+
+      <div class="news-card large">
+        <div class="news-thumb">
+          <img src="https://images.pexels.com/photos/1027130/pexels-photo-1027130.jpeg" alt="Apple news">
+        </div>
+        <h3>Apple loses UK lawsuit over app store commissions</h3>
+        <p class="author">Reuters</p>
+      </div>
+
+      <div class="news-card large">
+        <div class="news-thumb">
+          <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" alt="JLR news">
+        </div>
+        <h3>Jaguar Land Rover hack cost UK economy an estimated $2.5 billion,...</h3>
+        <p class="author">Reuters</p>
+      </div>
+
+      <div class="news-card small">
+        <div class="news-thumb">
+          <img src="https://images.pexels.com/photos/532791/pexels-photo-532791.jpeg" alt="UK budget news">
+        </div>
+        <h3>UK Chancellor Reeves: Nov. budget will respond to the global challenges we face</h3>
+        <p class="author">Hugh Leask</p>
+      </div>
+
+      <div class="news-card small">
+        <div class="news-thumb">
+          <img src="https://images.pexels.com/photos/8460155/pexels-photo-8460155.jpeg" alt="Revolut news">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Revolut’s game plan for cracking India’s payments market</h3>
+      </div>
+
+      <div class="news-card small">
+        <div class="news-thumb">
+          <img src="https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg" alt="Carmakers news">
+        </div>
+        <h3>Carmakers face key trial in UK lawsuits, decade after ‘dieselgate’ scandal</h3>
+        <p class="author">Reuters</p>
+      </div>
+
+    </div>
+  </section>
+<section class="pro-news">
+    <h2 class="pro-title">PRO NEWS AND ANALYSIS</h2>
+
+    <div class="news-grid">
+
+      <article class="news-card big">
+        <img src="https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg" alt="UBS news">
+        <div class="news-content">
+          <span class="pro-tag">PRO</span>
+          <h3>Don’t just bet on the U.S. rally. UBS sees ‘best opportunities’ in Asia, bonds and gold</h3>
+          <p class="author">Lee Ying Shan <span class="time">6 HOURS AGO</span></p>
+        </div>
+      </article>
+
+      <article class="news-card big">
+        <img src="https://images.pexels.com/photos/1595159/pexels-photo-1595159.jpeg" alt="Knicks stock news">
+        <div class="news-content">
+          <span class="pro-tag">PRO</span>
+          <h3>Buy MSG stock because the winning Knicks are growing in value, Citigroup says</h3>
+          <p class="author">Sean Conlon</p>
+        </div>
+      </article>
+
+      <article class="news-card small">
+        <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg" alt="Earnings playbook">
+        <div class="news-content">
+          <span class="pro-tag">PRO</span>
+          <h3>Earnings playbook: Five ‘Magnificent Seven’ members set to report in busy week</h3>
+          <p class="author">Fred Imbert</p>
+        </div>
+      </article>
+
+      <article class="news-card small">
+        <img src="https://image.cnbcfm.com/api/v1/image/108096650-1738613423779-gettyimages-2196949365-AFP_36X447Q.jpeg?v=1755521423&w=600&h=300&ffmt=webp&vtcrop=y" alt="Market strategies">
+        <div class="news-content">
+          <h3>Will the bull market make it to a fourth year? — Learn top strategies at Pro Live</h3>
+          <p class="author">John Melloy</p>
+        </div>
+      </article>
+
+      <article class="news-card small">
+        <img src="https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg" alt="Meta AI">
+        <div class="news-content">
+          <span class="pro-tag">PRO</span>
+          <h3>Chinese rivals to Meta’s AI glasses are piling up. How Goldman is playing the trend</h3>
+          <p class="author">Evelyn Cheng</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+<section class="explains-section">
+    <h2 class="explains-title">CNBC EXPLAINS</h2>
+
+    <div class="explains-grid">
+
+      <article class="explains-card large">
+        <div class="img-wrapper">
+          <img src="https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg" alt="Stablecoin Asia">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Why Asia is leading the way in stablecoin adoption</h3>
+        <p class="author">Ellyani Hanis</p>
+      </article>
+
+      <article class="explains-card large">
+        <div class="img-wrapper">
+          <img src="https://image.cnbcfm.com/api/v1/image/108193660-Thumbnail_Explain_Italy_V4.jpg?v=1756904494&w=600&h=300&ffmt=webp&vtcrop=y" alt="Defense Tech">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Why private investors are pouring billions into Europe’s defense tech...</h3>
+        <p class="author">Gaelle Legrand</p>
+      </article>
+
+      <article class="explains-card small">
+        <div class="img-wrapper">
+          <img src="https://image.cnbcfm.com/api/v1/image/108206959-Thumbnail_Explain_Defense_Tech_V4.jpg?v=1759408128&w=600&h=630&ffmt=webp&vtcrop=y" alt="Millionaires Italy">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Why so many millionaires are moving to Italy</h3>
+      </article>
+
+      <article class="explains-card small">
+        <div class="img-wrapper">
+          <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" alt="Spain economy">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Why Spain’s economy is booming – and what could derail its growth</h3>
+      </article>
+
+      <article class="explains-card small">
+        <div class="img-wrapper">
+          <img src="https://image.cnbcfm.com/api/v1/image/108161835-Thumbnail_Explain_Germany_V5.jpg?v=1750432247&w=600&h=300&ffmt=webp&vtcrop=y" alt="Germany economy">
+          <div class="play-icon">▶</div>
+        </div>
+        <h3>Why Germany is rebooting its economy</h3>
+      </article>
+
+    </div>
+  </section>
+
+<footer class="cnbc-footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="https://static-redesign.cnbcfm.com/dist/7821ea3cb72f88388591.svg" alt="CNBC Logo">
+
+        
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fas fa-rss"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-content">
+      <!-- Column 1 -->
+      <ul>
+        <li><a href="#">Subscribe to CNBC PRO</a></li>
+        <li><a href="#">CNBC Councils</a></li>
+        <li><a href="#">Join the CNBC Panel</a></li>
+        <li><a href="#">Closed Captioning</a></li>
+        <li><a href="#">Internships</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#">Subscribe to Investing Club</a></li>
+        <li><a href="#">Supply Chain Values</a></li>
+        <li><a href="#">Digital Products</a></li>
+        <li><a href="#">Corrections</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#">Licensing & Reprints</a></li>
+        <li><a href="#">CNBC on Peacock</a></li>
+        <li><a href="#">News Releases</a></li>
+        <li><a href="#">About CNBC</a></li>
+        <li><a href="#">Ad Choices</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="footer-box">
+        <h3>News Tips</h3>
+        <p>Got a confidential news tip? We want to hear from you.</p>
+        <button>GET IN TOUCH</button>
+
+        <h3>Advertise With Us</h3>
+        <button>PLEASE CONTACT US</button>
+      </div>
+
+      <div class="footer-box">
+        <h3> CNBC Newsletters</h3>
+        <p>Sign up for free newsletters and get more CNBC delivered to your inbox.</p>
+        <button>SIGN UP NOW</button>
+        <small>Get this delivered to your inbox, and more info about our products and services.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<div class="footer-bottom">
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Your Privacy Choices</a> |
+    <a href="#">CA Notice</a> |
+    <a href="#">Terms of Service</a>
+  </div>
+
+  <p>© 2025 CNBC LLC. All Rights Reserved. A Division of NBCUniversal</p>
+  <p class="footer-text">
+    Data is a real-time snapshot *Data is delayed at least 15 minutes. Global Business and Financial News, Stock Quotes, and Market Data and Analysis.
+  </p>
+  <p class="footer-bold">Market Data Terms of Use and Disclaimers</p>
+  <p class="footer-text">
+    Data also provided by <img src="https://static-redesign.cnbcfm.com/dist/09c161b9810767a7849e.svg" alt="Refinitiv" class="refinitiv-logo">
+
+
+    
+  </p>
+</div>
+
+
+</body>
+</html>
