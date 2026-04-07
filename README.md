@@ -23,14 +23,14 @@ CNBC-Clone/
 │── index.html
 │── README.md
 ⚙️ How to Run
-Download or clone the repository
-git clone https://github.com/pateldrup/cnbc-clone.git
+
 Open the project folder
 Run the project
 👉 Just open index.html in your browser
 🌍 Live Demo
 
 👉 View Live Website
+https://graceful-brigadeiros-6228a8.netlify.app/
 
 🎯 Learning Outcome
 Improved HTML structure skills
