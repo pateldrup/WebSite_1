@@ -24,7 +24,7 @@ CNBC-Clone/
 │── README.md
 ⚙️ How to Run
 Download or clone the repository
-git clone https://github.com/your-username/cnbc-clone.git
+git clone https://github.com/pateldrup/cnbc-clone.git
 Open the project folder
 Run the project
 👉 Just open index.html in your browser
