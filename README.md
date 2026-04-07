@@ -15,7 +15,6 @@ CSS3 (Flexbox & Grid)
 📸 Screenshots
 <img width="1378" height="759" alt="image" src="https://github.com/user-attachments/assets/f22e0a4b-ceb0-4908-98cd-3871dd1b2ed8" />
 <img width="1371" height="749" alt="image" src="https://github.com/user-attachments/assets/8f2f9f4e-4154-4bb1-b5e8-0b1f67914870" />
-<img width="1415" height="732" alt="image" src="https://github.com/user-attachments/assets/eeeec957-9e19-4ee6-989e-02d55f996552" />
 
 
 
